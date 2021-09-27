@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Button, TextInput } from 'react-native'
+import firebase from 'firebase'
 
 export class Register extends Component {
     constructor(props) {
@@ -13,8 +14,8 @@ export class Register extends Component {
         this.onSignUp = this.onSignUp.bind(this)
     }
 
-    onSignUp(){
-
+    onSignUp() {
+        const { email, password, name } = this.state;
     }
 
     render() {
@@ -22,16 +23,16 @@ export class Register extends Component {
             <View>
                 <TextInput
                     placeholder='name'
-                    onChangeText={(nameParameter) => this.setState({ name : nameParameter })} 
-                    />
+                    onChangeText={(nameParameter) => this.setState({ name: nameParameter })}
+                />
                 <TextInput
                     placeholder='email'
-                    onChangeText={(emailParameter) => this.setState({ emailParameter })} 
-                    />
+                    onChangeText={(emailParameter) => this.setState({ emailParameter })}
+                />
                 <TextInput
                     placeholder='password' secureTextEntry='true'
-                    onChangeText={(passwordParameter) => this.setState({ passwordParameter })} 
-                    />
+                    onChangeText={(passwordParameter) => this.setState({ passwordParameter })}
+                />
                 <Button onPress={() => this.onSignUp()} title='Sign Up' />
             </View>
         )
